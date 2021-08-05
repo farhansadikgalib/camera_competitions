@@ -47,13 +47,13 @@ dependencies:
 
 
 flutter_icons:
-  image_path: "assets/icon/app_logo.png"
+  image_path: "assets/logo.png"
   android: true
   ios: true
   remove_alpha_ios: true
 
-flutter_launcher_name:
-  name: "HappyValleyU"
+#flutter_launcher_name:
+#  name: "HappyValleyU"
 
 
 dev_dependencies:
