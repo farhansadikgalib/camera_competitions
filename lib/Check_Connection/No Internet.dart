@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:camera_competitions/Home_Page/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'check_internet.dart';
 
@@ -123,7 +124,7 @@ class _No_Internet_ConnectionState extends State<No_Internet_Connection> {
                               context,
                               MaterialPageRoute(builder: (context) =>
                                   HomePage(
-                                      url: 'https://www.happyvalleyu.com/')),
+                                      url: 'https://cameracompetitions.co.uk')),
                                   (route) => false);
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content: Text('Connected to the internet'),

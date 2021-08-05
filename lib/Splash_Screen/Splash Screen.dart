@@ -1,4 +1,7 @@
 import 'dart:async';
+import 'package:camera_competitions/Check_Connection/No%20Internet.dart';
+import 'package:camera_competitions/Check_Connection/check_internet.dart';
+import 'package:camera_competitions/Home_Page/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -45,7 +48,7 @@ class _SplashScreenPageState extends State<SplashScreenPage>
                 Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(builder: (context) => HomePage(
-                        url: 'https://www.happyvalleyu.com/')),
+                        url: 'https://cameracompetitions.co.uk')),
                         (route) => false));
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text('Connected to the internet'),
