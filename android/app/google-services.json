@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "676948642299",
+    "project_id": "camera-competitions",
+    "storage_bucket": "camera-competitions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676948642299:android:c79d4210ce733e6380a35e",
+        "android_client_info": {
+          "package_name": "com.farhan.camera_competitions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "676948642299-q6kqkj42o3oikoef5n87c3hi2ja5ig97.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.farhan.camera_competitions",
+            "certificate_hash": "b6d4838075909c2a3a4c2b9481c76f54099dbd02"
+          }
+        },
+        {
+          "client_id": "676948642299-oqg88rm08246llcpskcuu7jpjetas633.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw6-T73j_d2VJrYLH5_GkKc5WPWXLPsHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "676948642299-oqg88rm08246llcpskcuu7jpjetas633.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:camera_competitions/Check_Connection/No%20Internet.dart';
+import 'package:camera_competitions/Push%20Notification/pushNotification.dart';
 import 'package:connectivity/connectivity.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:shimmer/shimmer.dart';
@@ -15,16 +17,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // FirebaseNotifcation? firebase;
+   FirebaseNotifcation? firebase;
   int checkInt = 0;
   late ConnectivityResult previous;
 
 
 
   handleAsync() async {
-    // await firebase!.initialize();
-    // String? token = await firebase!.getToken();
-    // print("Firebase token : $token");
+    await firebase!.initialize();
+    String? token = await firebase!.getToken();
+    print("Firebase token : $token");
   }
 
 
@@ -33,11 +35,11 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    // firebase = FirebaseNotifcation();
+    firebase = FirebaseNotifcation();
     handleAsync();
 
     pullToRefreshController = PullToRefreshController(
-      options: PullToRefreshOptions(color: Colors.yellow[800]),
+      options: PullToRefreshOptions(color: Colors.blueAccent),
       onRefresh: () async {
         if (Platform.isAndroid) {
           _webViewController?.reload();
@@ -55,7 +57,6 @@ class _HomePageState extends State<HomePage> {
             context,
             MaterialPageRoute(builder: (context) => No_Internet_Connection()), (route) => false );
       }else if(previous == ConnectivityResult.none){
-        // internet conn
         Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) => No_Internet_Connection()), (route) => false );
@@ -73,21 +74,21 @@ class _HomePageState extends State<HomePage> {
     return (await showDialog(
       context: context,
       builder: (context) => new AlertDialog(
-        title: new Text('Are you sure?'),
-        content: new Text('Do you want to exit an App'),
+        title: new Text('Are you sure you want to exit?',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+        // content: new Text(''),
         actions: <Widget>[
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
             child: new Text(
               'No',
-              style: TextStyle(color: Colors.green[800]),
+              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,color: Colors.green[800]),
             ),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(true),
             child: new Text(
               'Yes',
-              style: TextStyle(color: Colors.red[800]),
+              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,color: Colors.red[800]),
             ),
           ),
         ],
@@ -130,14 +131,14 @@ class _HomePageState extends State<HomePage> {
       onWillPop: _onWillPop,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(30, 166, 154, 1),
+          backgroundColor: Colors.black,
           title: Shimmer.fromColors(
             baseColor: Colors.white,
-            highlightColor: Color.fromRGBO(40, 166, 154, .8),
+            highlightColor: Colors.blue,
             child: Column(
               children: [
                 Text(
-                  'HappyValleyU',
+                  'Camera Competitions',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 22.0,
@@ -178,20 +179,20 @@ class _HomePageState extends State<HomePage> {
             Icons.refresh, color: Colors.white,
 
           ),
-          backgroundColor: Color.fromRGBO(30, 166, 154, 1),
+          backgroundColor: Colors.black,
         ),
         body: SafeArea(
           child: Container(
             child: Column(
               children: [
-                progress < 1.0
-                    ? LinearProgressIndicator(
-                        value: progress,
-                        backgroundColor: Colors.white,
-                        valueColor:
-                            AlwaysStoppedAnimation<Color>(Colors.yellow[800]!),
-                      )
-                    : Center(),
+                // progress < 1.0
+                //     ? LinearProgressIndicator(
+                //         value: progress,
+                //         backgroundColor: Colors.white,
+                //         valueColor:
+                //             AlwaysStoppedAnimation<Color>(Colors.blueAccent!),
+                //       )
+                //     : Center(),
                 Expanded(
                   child: InAppWebView(
                     key: webViewKey,

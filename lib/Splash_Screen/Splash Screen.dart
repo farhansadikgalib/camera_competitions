@@ -30,7 +30,7 @@ class _SplashScreenPageState extends State<SplashScreenPage>
         });
         print('No internet connect');
         Timer(
-            Duration(seconds: 4),
+            Duration(seconds: 5),
                 () =>
                 Navigator.pushAndRemoveUntil(
                     context,
@@ -43,16 +43,17 @@ class _SplashScreenPageState extends State<SplashScreenPage>
         });
         print('Internet connected');
         Timer(
-            Duration(seconds: 4),
+            Duration(seconds: 5),
                 () =>
                 Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(builder: (context) => HomePage(
                         url: 'https://cameracompetitions.co.uk')),
                         (route) => false));
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text('Connected to the internet'),
-        ));
+        // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        //   content: Text('Connected to the internet'),
+        // )
+     //   );
       }
     });
   }
@@ -77,20 +78,20 @@ class _SplashScreenPageState extends State<SplashScreenPage>
                   ),
                 )),
           ),
+          Text("Camera Competitions",
+              style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold, fontFamily: "Poppins",color: Colors.black)),
           SizedBox(
             height: 75,
           ),
 
-          SpinKitFadingCube(
-            color: Color.fromRGBO(30, 166, 154, 1),
+          SpinKitSquareCircle(
+            color: Colors.black,
             size: 25.0,
             controller: AnimationController(
                 duration: const Duration(milliseconds: 1300), vsync: this),
           ),
 
 
-          // Text("loading",
-          //     style: TextStyle(fontSize: 14, fontFamily: "Poppins",color: Colors.yellow[800])),
           SizedBox(
             height: 10,
           ),
