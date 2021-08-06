@@ -30,7 +30,7 @@ class _SplashScreenPageState extends State<SplashScreenPage>
         });
         print('No internet connect');
         Timer(
-            Duration(seconds: 5),
+            Duration(seconds: 3),
                 () =>
                 Navigator.pushAndRemoveUntil(
                     context,
@@ -43,7 +43,7 @@ class _SplashScreenPageState extends State<SplashScreenPage>
         });
         print('Internet connected');
         Timer(
-            Duration(seconds: 5),
+            Duration(seconds: 3),
                 () =>
                 Navigator.pushAndRemoveUntil(
                     context,

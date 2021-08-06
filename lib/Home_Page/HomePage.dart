@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.black,
           title: Shimmer.fromColors(
             baseColor: Colors.white,
-            highlightColor: Colors.blue,
+            highlightColor: Colors.black54,
             child: Column(
               children: [
                 Text(
