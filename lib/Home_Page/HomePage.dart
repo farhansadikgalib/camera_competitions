@@ -5,7 +5,6 @@ import 'package:connectivity/connectivity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:shimmer/shimmer.dart';
 
 class HomePage extends StatefulWidget {
   final String url;
@@ -132,22 +131,18 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
-          title: Shimmer.fromColors(
-            baseColor: Colors.white,
-            highlightColor: Colors.black54,
-            child: Column(
-              children: [
-                Text(
-                  'Camera Competitions',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 22.0,
-                    fontFamily: "Poppins",
-                    // fontWeight: FontWeight.bold,
-                  ),
+          title: Column(
+            children: [
+              Text(
+                'Camera Competitions',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 22.0,
+                  fontFamily: "Poppins",
+                  // fontWeight: FontWeight.bold,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           actions: <Widget>[
             IconButton(
